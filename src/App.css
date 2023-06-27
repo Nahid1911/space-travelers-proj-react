@@ -1,7 +1,7 @@
-.App {
+/* .App {
   text-align: center;
-}
-
+} */
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,4 +26,17 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+/* .mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+} */
+
+.mainBodyDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
