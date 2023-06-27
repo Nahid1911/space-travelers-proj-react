@@ -31,7 +31,7 @@ const NavBar = () => {
       <Nav activeKey="/" className={NavStyles.linksContainer}>
         <Nav.Item><Nav.Link as={NavLink} to="/" exact="true" className={rocketLinkStyle}>Rockets </Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link as={NavLink} to="/mission" className={missionsLinkStyle}>Missions</Nav.Link></Nav.Item>
-        <Nav.Item><Nav.Link as={NavLink} to="/dragon" className={dragonLinkStyle}>Dragon</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={NavLink} to="/dragon" className={dragonLinkStyle}>Dragons</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link as={NavLink} to="/myprofile" className={myProfileLinkStyle}>My Profile</Nav.Link></Nav.Item>
       </Nav>
     </Stack>
