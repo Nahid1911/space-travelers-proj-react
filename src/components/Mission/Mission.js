@@ -10,6 +10,18 @@ const Missions = () => {
       dispatch(FetchMissions());
     }
   }, [dispatch, fetched]);
-};
 
+  return (
+    <div>
+      <table className="table table-striped table-hover table-bordered">
+        <tr className="fs-5">
+          <th className="p-2">Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+      </table>
+    </div>
+  );
+};
 export default Missions;
