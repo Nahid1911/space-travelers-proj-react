@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 import { FetchMissions } from '../../redux/missionsSlice/missionsSlice';
 
 const Missions = () => {
@@ -11,17 +12,9 @@ const Missions = () => {
     }
   }, [dispatch, fetched]);
 
-  return (
-    <div>
-      <table className="table table-striped table-hover table-bordered">
-        <tr className="fs-5">
-          <th className="p-2">Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th> </th>
-        </tr>
-      </table>
-    </div>
-  );
+  const missions = useSelector((state) => state.missions.missions);
+
+  
 };
+
 export default Missions;
