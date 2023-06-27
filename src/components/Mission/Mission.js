@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import { FetchMissions } from '../../redux/missionsSlice/missionsSlice';
+import { FetchMissions, joinMission } from '../../redux/missionsSlice/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Missions = () => {
                 </td>
                 <td className="text-center">
 
-                  <Button variant="outline-secondary">Join Missions</Button>
+                  <Button variant="outline-secondary" onClick={() => dispatch(joinMission({ id: mission.mission_id }))}>Join Missions</Button>
 
                 </td>
 
