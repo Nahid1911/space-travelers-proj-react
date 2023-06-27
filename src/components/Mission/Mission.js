@@ -34,7 +34,7 @@ const Missions = () => {
                 </td>
                 <td className="text-center">
 
-                  
+                  <Button variant="outline-danger">Join Missions</Button>
 
                 </td>
 
