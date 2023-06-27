@@ -1,7 +1,14 @@
 import React from 'react';
 
-const Mission = () => (
-  <div><h3> Create basic staructure of Mission page</h3></div>
-);
 
-export default Mission;
+const Missions = () => {
+  const dispatch = useDispatch();
+  const missionsLoaded = useSelector((state) => state.missions.missions.length > 0);
+  useEffect(() => {
+    if (!missionsLoaded) {
+      dispatch(FetchMissions());
+    }
+  }, [dispatch, missionsLoaded]);
+}
+
+export default Missions;
