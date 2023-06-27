@@ -21,7 +21,7 @@ const NavBar = () => {
   const myProfileLinkStyle = getNavLinkStyle('/myprofile', `${NavStyles.linksStyles} ${NavStyles.ml1}`);
 
   return (
-    <Stack className={NavStyles.navbarContainer}>
+    <Stack direction="horizontal" className={NavStyles.navbarContainer}>
       <div className={NavStyles.logoContainer}>
         <NavLink to="/">
           <img src={Logo} alt="" className={`${NavStyles.logo} ${NavStyles.mr1}`} />

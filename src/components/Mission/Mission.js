@@ -1,5 +1,4 @@
-import {useDispatch} from 'react';
-
+import { useDispatch } from 'react';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -9,6 +8,6 @@ const Missions = () => {
       dispatch(FetchMissions());
     }
   }, [dispatch, missionsLoaded]);
-}
+};
 
 export default Missions;
