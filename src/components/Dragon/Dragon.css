@@ -1,0 +1,19 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.bodyImg {
+  width: 100%;
+}
+
+.card {
+  border: none;
+  width: 100%;
+}
