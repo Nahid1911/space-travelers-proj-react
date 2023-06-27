@@ -14,7 +14,37 @@ const Missions = () => {
 
   const missions = useSelector((state) => state.missions.missions);
 
-  
+  return (
+    <div>
+      <table className="table table-striped table-hover table-bordered">
+        <tr className="fs-5">
+          <th className="p-2">Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+        <tbody>
+          {
+            missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td className="fw-bold">{mission.mission_name}</td>
+                <td>{mission.description}</td>
+                <td className="text-center">
+                  NOT A MEMBER
+                </td>
+                <td className="text-center">
+
+                  
+
+                </td>
+
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default Missions;
