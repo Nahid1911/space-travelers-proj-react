@@ -32,9 +32,7 @@ const Missions = () => {
               <tr key={mission.mission_id}>
                 <td className="fw-bold">{mission.mission_name}</td>
                 <td>{mission.description}</td>
-                <td className="text-center">
-                  NOT A MEMBER
-                </td>
+                {mission.reserved ? <td className="badge bg-primary text-center text-light m-4">Active Member</td> : <td className="badge bg-secondary text-light m-4">NOT A MEMBER</td>}
                 <td className="text-center">
                   { mission.reserved ? (
                     <Button variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
