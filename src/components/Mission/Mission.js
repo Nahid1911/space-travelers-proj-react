@@ -17,15 +17,18 @@ const Missions = () => {
   return (
     <div>
       <table className="table table-striped table-hover table-bordered">
-        <tr className="fs-5">
-          <th className="p-2">Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th> </th>
-        </tr>
+        <thead>
+          <tr className="fs-5">
+            <th className="p-2">Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
+        </thead>
         <tbody>
           {
             missions.map((mission) => (
+
               <tr key={mission.mission_id}>
                 <td className="fw-bold">{mission.mission_name}</td>
                 <td>{mission.description}</td>

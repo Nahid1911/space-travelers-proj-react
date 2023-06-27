@@ -29,7 +29,7 @@ const missionSlice = createSlice({
       });
 
       return { ...state, missions: newState };
-    }
+    },
 
   },
   extraReducers: (builder) => {
