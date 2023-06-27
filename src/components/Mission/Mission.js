@@ -1,13 +1,15 @@
-import { useDispatch } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchMissions } from '../../redux/missionsSlice/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missionsLoaded = useSelector((state) => state.missions.missions.length > 0);
+  const fetched = useSelector((state) => state.missions.missions.length > 0);
   useEffect(() => {
-    if (!missionsLoaded) {
+    if (!fetched) {
       dispatch(FetchMissions());
     }
-  }, [dispatch, missionsLoaded]);
+  }, [dispatch, fetched]);
 };
 
 export default Missions;
