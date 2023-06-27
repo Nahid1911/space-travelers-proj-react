@@ -37,9 +37,9 @@ const Missions = () => {
                 </td>
                 <td className="text-center">
                   { mission.reserved ? (
-                    <Button variant="outline-secondary" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
+                    <Button variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
                   ) : (
-                    <Button variant="outline-danger" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
+                    <Button variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
                   )}
 
                 </td>
