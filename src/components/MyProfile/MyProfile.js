@@ -11,7 +11,9 @@ const MyProfile = () => {
   return (
     <div className="profile-container mx-5" style={{ display: 'flex' }}>
       <div className="px-4" style={{ width: '34%' }}>
-        
+        <h2>My Missions</h2>
+        { joinedmissions.length === 0
+        && <p className={MyProfileStyle.title}>&emsp; Join ✍ a Mission First</p>}
         <Table bordered>
           <tbody>
             {
@@ -20,7 +22,7 @@ const MyProfile = () => {
             <td className={MyProfileStyle.fontSize}>
               {mission.mission_name}
             </td>
-           
+            
           </tr>
         ))
         }
