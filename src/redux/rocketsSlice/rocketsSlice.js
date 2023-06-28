@@ -37,6 +37,14 @@ const rocketSlice = createSlice({
       state.error = '';
     });
 
+    builder.addCase(cancelReservation.fulfilled, (state, action) => {
+      const { id } = action.payload;
+      state.isLoading = false;
+      state.rockets = state.rockets.map((rocket) => (rocket
+        .id === id ? { ...rocket, reserved: false } : rocket));
+      state.error = '';
+    });
+
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.isLoading = false;
       state.rockets = action.payload;
