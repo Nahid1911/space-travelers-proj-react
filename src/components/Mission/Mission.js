@@ -41,7 +41,7 @@ const Missions = () => {
                     <Badge bg="secondary">NOT A MEMBER</Badge>
                   )}
                 </td>
-                <td className="text-center">
+                <td cglassName="text-center">
 
                   <Button variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
 
