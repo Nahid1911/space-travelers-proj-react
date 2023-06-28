@@ -9,4 +9,8 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 
-
+jest.mock('../redux/missionsSlice/missionsSlice', () => ({
+  FetchMissions: jest.fn(),
+  leavingMission: jest.fn(),
+  joiningMission: jest.fn(),
+}));
