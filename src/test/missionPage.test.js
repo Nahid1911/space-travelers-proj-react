@@ -59,4 +59,16 @@ describe('Missions component', () => {
     expect(FetchMissions).toHaveBeenCalled();
   });
 
-  
+  it('should display missions with correct information', () => {
+    const { getByText, getByTestId } = render(<Missions />);
+
+    expect(getByText('Mission 1')).toBeTruthy();
+    expect(getByText('Mission description 1')).toBeTruthy();
+    expect(getByTestId('not-member-badge').textContent).toBe('NOT A MEMBER');
+    expect(getByTestId('join-mission-button').textContent).toBe('Join Missions');
+
+    expect(getByText('Mission 2')).toBeTruthy();
+    expect(getByText('Mission description 2')).toBeTruthy();
+    expect(getByTestId('active-member-badge').textContent).toBe('Active Member');
+    expect(getByTestId('leave-mission-button').textContent).toBe('Leave Missions');
+  });
