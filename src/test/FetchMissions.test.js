@@ -44,3 +44,9 @@ describe('FetchMissions async action', () => {
   it('dispatches the correct actions when API call fails', async () => {
     // Mock the fetch function to throw an error
     global.fetch = jest.fn().mockRejectedValue('API error');
+
+    // Define the expected actions that should be dispatched
+    const expectedActions = [
+      FetchMissions.pending().type,
+      FetchMissions.rejected().type,
+    ];
