@@ -5,7 +5,7 @@ import dragonsSlice from './dragonsSlice/dragonsSlice';
 
 const Store = configureStore({
   reducer: {
-    mission: missionReducer,
+    missions: missionReducer,
     rocket: rocketsSlice,
     dragon: dragonsSlice,
 
