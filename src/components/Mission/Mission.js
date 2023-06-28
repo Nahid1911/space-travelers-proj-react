@@ -35,16 +35,16 @@ const Missions = () => {
                 <td>{mission.description}</td>
                 <td className="text-light m-10">
                   { mission.reserved ? (
-                    <Badge bg="info">Active Member</Badge>
+                    <Badge data-testid="active-member-badge" bg="info">Active Member</Badge>
                   ) : (
-                    <Badge bg="secondary">NOT A MEMBER</Badge>
+                    <Badge data-testid="not-member-badge" bg="secondary">NOT A MEMBER</Badge>
                   )}
                 </td>
                 <td className="text-center">
                   { mission.reserved ? (
-                    <Button variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
+                    <Button data-testid="leave-mission-button" variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
                   ) : (
-                    <Button variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
+                    <Button  data-testid="join-mission-button" variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
                   )}
 
                 </td>
