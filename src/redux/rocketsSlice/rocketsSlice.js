@@ -11,6 +11,7 @@ const initialState = {
 export const fetchRockets = createAsyncThunk('rockets/fetchRockets', () => axios.get(URL.rocketsURL).then((response) => response.data.map((rocket) => ({
   id: rocket.id,
   name: rocket.name,
+  description: rocket.description,
   type: rocket.type,
   flickr_images: rocket.flickr_images,
 }))));
