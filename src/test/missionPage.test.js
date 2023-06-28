@@ -45,3 +45,18 @@ describe('Missions component', () => {
     leavingMission.mockClear();
     joiningMission.mockClear();
   });
+
+  it('should fetchm missions if not already fetched', () => {
+    useSelector.mockImplementation((selector) => selector({
+      missions: {
+        missions: [],
+      },
+    }));
+
+    render(<Missions />);
+
+    expect(useDispatch).toHaveBeenCalled();
+    expect(FetchMissions).toHaveBeenCalled();
+  });
+
+  
