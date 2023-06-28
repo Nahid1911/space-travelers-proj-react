@@ -11,7 +11,7 @@ const DragonsRender = () => {
   }, [dispatch]);
   const dragonArray = useSelector((state) => state.dragonsStore.dragonsArray);
   return (
-    <div>
+    <div className="mainBodyDiv">
       {dragonArray.map((dragon) => (
         <DragonItem
           key={dragon.id}
