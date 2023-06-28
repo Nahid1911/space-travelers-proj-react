@@ -35,3 +35,7 @@ col {
   padding: 0;
   margin: 0;
 }
+
+.badge {
+  padding: 6px;
+}
