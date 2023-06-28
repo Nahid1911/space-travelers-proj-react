@@ -16,7 +16,7 @@ describe('leaveMission reducer', () => {
         {
           mission_id: '4453', mission_name: 'Mission 1', description: 'Description 1', reserved: false,
         },
-        { mission_id: '23', mission_name: 'Mission 2', description: 'Description 2' },
+        { mission_id: '123', mission_name: 'Mission 2', description: 'Description 2' },
       ],
     };
 
