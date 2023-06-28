@@ -44,7 +44,7 @@ const Missions = () => {
                   { mission.reserved ? (
                     <Button data-testid="leave-mission-button" variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
                   ) : (
-                    <Button  data-testid="join-mission-button" variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
+                    <Button data-testid="join-mission-button" variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
                   )}
 
                 </td>

@@ -81,7 +81,7 @@ describe('Missions component', () => {
     expect(leavingMission).toHaveBeenCalledWith({ id: '2' });
   });
   it('should dispatch joiningMission when "Join Missions" button is clicked', () => {
-    const { getByTestId } = render(<Missions />)
+    const { getByTestId } = render(<Missions />);
     fireEvent.click(getByTestId('join-mission-button'));
 
     expect(useDispatch).toHaveBeenCalled();
