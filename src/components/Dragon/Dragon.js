@@ -1,41 +1,28 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import { Col } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
-import { useDispatch } from 'react-redux';
-import SideImg from '../assets/planet_bigger.png';
-import './Dragon.css';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchDragons } from '../../redux/dragonsSlice/dragonsSlice';
+import DragonItem from './DragonItem';
 
 const DragonsRender = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDragons());
   }, [dispatch]);
-
+  const dragonArray = useSelector((state) => state.dragonsStore.dragonsArray);
   return (
-    <Container>
-      <Row>
-        <Col md={2} lg={2}>
-          <Image className="bodyImg" src={SideImg} />
-        </Col>
-        <Col md={10} lg={10}>
-          <Card>
-            <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="primary">Reserve Dragon</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      {dragonArray.map((dragon) => (
+        <DragonItem
+          key={dragon.id}
+          id={dragon.id}
+          name={dragon.name}
+          type={dragon.type}
+          description={dragon.description}
+          flickrImages={dragon.flickrImage}
+        />
+      ))}
+    </div>
   );
 };
 
