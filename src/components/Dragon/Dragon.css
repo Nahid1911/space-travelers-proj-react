@@ -36,6 +36,12 @@
   text-align: justify;
 }
 
+.reserveSpan {
+  color: blue;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
 .card {
   border: none;
   width: 100%;
