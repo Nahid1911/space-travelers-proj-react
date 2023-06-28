@@ -1,30 +1,40 @@
-import { React, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useDispatch, useSelector } from 'react-redux';
-import '../../App.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import { Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
+import { useDispatch } from 'react-redux';
+import rocketImg from '../../assets/logo.png';
 import { fetchRockets } from '../../redux/rocketsSlice/rocketsSlice';
-import logo from '../../assets/logo.png';
 
 const Rockets = () => {
-  const { rockets } = useSelector((state) => state.rocket);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());
-  }, [dispatch, rockets]);
+  }, [dispatch]);
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>Falcon 1</Card.Title>
-        <Card.Text>
-          <img src={logo} alt="logo" />
-          The Falcon 1 was an expendable launch system
-        </Card.Text>
-        <Button variant="primary">Reserve Rocket</Button>
-      </Card.Body>
-    </Card>
+    <Container>
+      <Row>
+        <Col md={2} lg={2}>
+          <Image className="bodyImg" src={rocketImg} />
+        </Col>
+        <Col md={10} lg={10}>
+          <Card>
+            <Card.Body>
+              <Card.Title>Falcon 1</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="primary">Reserve Rocket</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
