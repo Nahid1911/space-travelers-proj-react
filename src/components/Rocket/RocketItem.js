@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+/* import Container from 'react-bootstrap/Container'; */
 import Badge from 'react-bootstrap/Badge';
 import { Col } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
@@ -17,7 +17,7 @@ const RocketItem = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <Container>
+    <div className="mainBodyDiv">
       <Row>
         <Col>
           <Image src={flickrImages} />
@@ -41,7 +41,7 @@ const RocketItem = ({
           </Card>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 RocketItem.propTypes = {

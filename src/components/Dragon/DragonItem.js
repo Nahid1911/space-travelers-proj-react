@@ -29,7 +29,7 @@ const DragonItem = ({
   };
 
   return (
-    <div className="container">
+    <div className="dargContainer">
       <div className="dragonImgContainre">
         <Image className="dragonImg" src={flickrImages} />
       </div>
