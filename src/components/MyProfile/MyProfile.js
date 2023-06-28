@@ -25,7 +25,9 @@ const MyProfile = () => {
             <td className="text-center">
               <Button variant="danger" align="right" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
             </td>
-            
+            <td className="text-center">
+              <Button variant="info" onClick={() => window.open(mission.wikipedia)}>Read More</Button>
+            </td>
           </tr>
         ))
         }
