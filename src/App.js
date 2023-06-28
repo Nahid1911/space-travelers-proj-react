@@ -4,7 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Rockets from './components/Rocket/Rockets';
 import Mission from './components/Mission/Mission';
-import Dragon from './components/Dragon/Dragon';
+import DragonsRender from './components/Dragon/Dragon';
 import MyProfile from './components/MyProfile/MyProfile';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Rockets />} />
           <Route path="/Mission" element={<Mission />} />
-          <Route path="/Dragon" element={<Dragon />} />
+          <Route path="/Dragon" element={<DragonsRender />} />
           <Route path="/MyProfile" element={<MyProfile />} />
         </Routes>
       </div>
