@@ -14,3 +14,34 @@ jest.mock('../redux/missionsSlice/missionsSlice', () => ({
   leavingMission: jest.fn(),
   joiningMission: jest.fn(),
 }));
+
+describe('Missions component', () => {
+  beforeEach(() => {
+    useDispatch.mockReturnValue(jest.fn());
+    useSelector.mockImplementation((selector) => selector({
+      missions: {
+        missions: [
+          {
+            mission_id: '1',
+            mission_name: 'Mission 1',
+            description: 'Mission description 1',
+            reserved: false,
+          },
+          {
+            mission_id: '2',
+            mission_name: 'Mission 2',
+            description: 'Mission description 2',
+            reserved: true,
+          },
+        ],
+      },
+    }));
+  });
+
+  afterEach(() => {
+    useDispatch.mockClear();
+    useSelector.mockClear();
+    FetchMissions.mockClear();
+    leavingMission.mockClear();
+    joiningMission.mockClear();
+  });
