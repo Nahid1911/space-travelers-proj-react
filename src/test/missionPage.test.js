@@ -72,3 +72,13 @@ describe('Missions component', () => {
     expect(getByTestId('active-member-badge').textContent).toBe('Active Member');
     expect(getByTestId('leave-mission-button').textContent).toBe('Leave Missions');
   });
+
+  it('should dispatch leaving Mission when "Leave Missions" button is clicked', () => {
+    const { getByTestId } = render(<Missions />);
+    fireEvent.click(getByTestId('leave-mission-button'));
+
+    expect(useDispatch).toHaveBeenCalled();
+    expect(leavingMission).toHaveBeenCalledWith({ id: '2' });
+  });
+
+});
