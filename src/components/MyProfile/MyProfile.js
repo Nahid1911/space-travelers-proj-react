@@ -22,6 +22,9 @@ const MyProfile = () => {
             <td className={MyProfileStyle.fontSize}>
               {mission.mission_name}
             </td>
+            <td className="text-center">
+              <Button variant="danger" align="right" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
+            </td>
             
           </tr>
         ))
