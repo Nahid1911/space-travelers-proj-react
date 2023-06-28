@@ -33,3 +33,6 @@ describe('FetchMissions async action', () => {
 
     // Dispatch the async action
     await store.dispatch(FetchMissions());
+
+    // Get the dispatched actions from the store
+    const dispatchedActions = store.getActions();
