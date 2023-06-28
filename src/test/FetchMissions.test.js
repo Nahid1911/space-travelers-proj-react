@@ -21,3 +21,12 @@ describe('FetchMissions async action', () => {
         { mission_id: '2', mission_name: 'Mission 2', description: 'Description 2' },
       ]),
     });
+
+    // Define the expected actions that should be dispatched
+    const expectedActions = [
+      FetchMissions.pending().type,
+      FetchMissions.fulfilled([
+        { mission_id: '1', mission_name: 'Mission 1', description: 'Description 1' },
+        { mission_id: '2', mission_name: 'Mission 2', description: 'Description 2' },
+      ]).type,
+    ];
