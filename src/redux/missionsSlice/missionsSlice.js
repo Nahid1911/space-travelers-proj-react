@@ -56,6 +56,7 @@ const missionSlice = createSlice({
           mission_id: element.mission_id,
           mission_name: element.mission_name,
           description: element.description,
+          wikipedia: element.wikipedia,
         }));
         state.missions = missions;
       })
