@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 import { FetchMissions } from '../../redux/missionsSlice/missionsSlice';
 
 const Missions = () => {
@@ -11,6 +12,8 @@ const Missions = () => {
     }
   }, [dispatch, fetched]);
 
+  const missions = useSelector((state) => state.missions.missions);
+
   return (
     <div>
       <table className="table table-striped table-hover table-bordered">
@@ -20,8 +23,28 @@ const Missions = () => {
           <th>Status</th>
           <th> </th>
         </tr>
+        <tbody>
+          {
+            missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td className="fw-bold">{mission.mission_name}</td>
+                <td>{mission.description}</td>
+                <td className="text-center">
+                  NOT A MEMBER
+                </td>
+                <td className="text-center">
+
+                  <Button variant="outline-secondary">Join Missions</Button>
+
+                </td>
+
+              </tr>
+            ))
+          }
+        </tbody>
       </table>
     </div>
   );
 };
+
 export default Missions;
