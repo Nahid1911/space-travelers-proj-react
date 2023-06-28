@@ -14,7 +14,16 @@ const MyProfile = () => {
         
         <Table bordered>
           <tbody>
-            
+            {
+        joinedmissions.map((mission) => (
+          <tr key={mission.mission_id}>
+            <td className={MyProfileStyle.fontSize}>
+              {mission.mission_name}
+            </td>
+           
+          </tr>
+        ))
+        }
           </tbody>
 
         </Table>
