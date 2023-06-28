@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (axios
   .get('https://api.spacexdata.com/v3/dragons')
@@ -7,7 +7,8 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (axio
     id: dragon.id,
     name: dragon.name,
     type: dragon.type,
-    flickr_images: dragon.flickr_images,
+    description: dragon.description,
+    flickrImage: dragon.flickr_images,
   })))
 ));
 
