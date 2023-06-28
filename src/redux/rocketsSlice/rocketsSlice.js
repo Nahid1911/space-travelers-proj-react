@@ -14,7 +14,12 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', () => axios
   description: rocket.description,
   type: rocket.type,
   flickr_images: rocket.flickr_images,
+  reserved: false,
 }))));
+
+export const reserveRocket = createAsyncThunk('rocket/reserveRocket', (id) => id);
+
+export const cancelReservation = createAsyncThunk('dragons/cancelReservation', (id) => id);
 
 const rocketSlice = createSlice({
   name: 'rockets',
