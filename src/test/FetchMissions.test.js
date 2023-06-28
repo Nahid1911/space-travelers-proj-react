@@ -50,3 +50,6 @@ describe('FetchMissions async action', () => {
       FetchMissions.pending().type,
       FetchMissions.rejected().type,
     ];
+
+    // Dispatch the async action
+    await store.dispatch(FetchMissions());
