@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import { FetchMissions, joiningMission } from '../../redux/missionsSlice/missionsSlice';
+import Badge from 'react-bootstrap/Badge';
+import { FetchMissions, leavingMission, joiningMission } from '../../redux/missionsSlice/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -32,15 +33,21 @@ const Missions = () => {
               <tr key={mission.mission_id}>
                 <td className="fw-bold">{mission.mission_name}</td>
                 <td>{mission.description}</td>
-                <td className="text-center">
-                  NOT A MEMBER
+                <td className="text-light m-10">
+                  { mission.reserved ? (
+                    <Badge bg="info">Active Member</Badge>
+                  ) : (
+                    <Badge bg="secondary">NOT A MEMBER</Badge>
+                  )}
                 </td>
                 <td className="text-center">
-
-                  <Button variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
+                  { mission.reserved ? (
+                    <Button variant="outline-danger" onClick={() => dispatch(leavingMission({ id: mission.mission_id }))}>Leave Missions</Button>
+                  ) : (
+                    <Button variant="outline-secondary" onClick={() => dispatch(joiningMission({ id: mission.mission_id }))}>Join Missions</Button>
+                  )}
 
                 </td>
-
               </tr>
             ))
           }
