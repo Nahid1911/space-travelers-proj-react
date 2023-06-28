@@ -36,3 +36,7 @@ describe('FetchMissions async action', () => {
 
     // Get the dispatched actions from the store
     const dispatchedActions = store.getActions();
+
+    // Verify that the dispatched actions match the expected actions
+    expect(dispatchedActions.map((action) => action.type)).toEqual(expectedActions);
+  });
