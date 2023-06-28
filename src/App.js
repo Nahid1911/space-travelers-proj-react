@@ -14,7 +14,7 @@ function App() {
       <div>
         <NavBar />
       </div>
-      <div>
+      <div className="mainBodyDiv">
         <Routes>
           <Route path="/" element={<Rockets />} />
           <Route path="/Mission" element={<Mission />} />
