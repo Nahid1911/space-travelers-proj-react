@@ -30,3 +30,6 @@ describe('FetchMissions async action', () => {
         { mission_id: '2', mission_name: 'Mission 2', description: 'Description 2' },
       ]).type,
     ];
+
+    // Dispatch the async action
+    await store.dispatch(FetchMissions());
