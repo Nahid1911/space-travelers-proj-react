@@ -3,18 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import MyProfileStyle from './MyProfile.module.css';
 import { leavingMission } from '../../redux/missionsSlice/missionsSlice';
-import Reservations from '../Rocket/Reservations';
+import { cancelReservation } from '../../redux/dragonsSlice/dragonsSlice';
+import { cancelReservation as cancelRocketReservation } from '../../redux/rocketsSlice/rocketsSlice';
 
 const MyProfile = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const joinedmissions = missions.filter((mission) => mission.reserved === true);
+  const dragons = useSelector((state) => state.dragonsStore.dragonsArray);
+  const joinedDragons = dragons.filter((dragon) => dragon.reserved === true);
+  const rockets = useSelector((state) => state.rocketsStore.rockets);
+  const joinedrockets = rockets.filter((rocket) => rocket.reserved === true);
   return (
     <div className="profile-container mx-5" style={{ display: 'flex' }}>
       <div className="px-4" style={{ width: '34%' }}>
         <h2>My Missions</h2>
         { joinedmissions.length === 0
-        && <p className={MyProfileStyle.title}>&emsp; Join ✍ a Mission First</p>}
+        && <p className={MyProfileStyle.title}>&emsp; No Mission Joined !!!</p>}
         <Table bordered>
           <tbody>
             {
@@ -38,19 +43,49 @@ const MyProfile = () => {
       </div>
       <div className="px-4" style={{ width: '33%' }}>
         <h2>My Rockets</h2>
+        { joinedrockets.length === 0
+        && <p className={MyProfileStyle.title}>&emsp; No Rocket Joined !!!</p>}
         <Table bordered>
           <tbody>
-            <Reservations />
+            {
+        joinedrockets.map((rocket) => (
+          <tr key={rocket.id}>
+            <td className={MyProfileStyle.fontSize}>
+              {rocket.name}
+            </td>
+            <td className="text-center">
+              <Button variant="danger" align="right" onClick={() => dispatch(cancelRocketReservation({ id: rocket.id }))}>Leave rockets</Button>
+            </td>
+            <td className="text-center">
+              <Button variant="info" onClick={() => window.open(rocket.wikipedia)}>Read More</Button>
+            </td>
+          </tr>
+        ))
+        }
           </tbody>
-
         </Table>
       </div>
       <div className="px-4" style={{ width: '33%' }}>
         <h2>My Dragons</h2>
+        { joinedDragons.length === 0
+        && <p className={MyProfileStyle.title}>&emsp; No Dragon Joined !!!</p>}
         <Table bordered>
           <tbody>
-            {/*     render here your list */}
-
+            {
+        joinedDragons.map((dragon) => (
+          <tr key={dragon.id}>
+            <td className={MyProfileStyle.fontSize}>
+              {dragon.name}
+            </td>
+            <td className="text-center">
+              <Button variant="danger" align="right" onClick={() => dispatch(cancelReservation({ id: dragon.id }))}>Leave dragons</Button>
+            </td>
+            <td className="text-center">
+              <Button variant="info" onClick={() => window.open(dragon.wikipedia)}>Read More</Button>
+            </td>
+          </tr>
+        ))
+        }
           </tbody>
 
         </Table>
