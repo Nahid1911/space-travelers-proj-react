@@ -57,7 +57,7 @@ const MyProfile = () => {
               <Button variant="danger" align="right" onClick={() => dispatch(cancelRocketReservation({ id: rocket.id }))}>Leave rockets</Button>
             </td>
             <td className="text-center">
-              <Button variant="info" onClick={() => window.open(rocket.wikipedia)}>Read More</Button>
+              <Button variant="info" onClick={() => window.open(rocket.wikiLink)}>Read More</Button>
             </td>
           </tr>
         ))
@@ -81,7 +81,7 @@ const MyProfile = () => {
               <Button variant="danger" align="right" onClick={() => dispatch(cancelReservation({ id: dragon.id }))}>Leave dragons</Button>
             </td>
             <td className="text-center">
-              <Button variant="info" onClick={() => window.open(dragon.wikipedia)}>Read More</Button>
+              <Button variant="info" onClick={() => window.open(dragon.wikipLink)}>Read More</Button>
             </td>
           </tr>
         ))

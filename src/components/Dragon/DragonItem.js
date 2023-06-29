@@ -29,7 +29,7 @@ const DragonItem = ({
           { !reserved ? (
             <Button variant="primary" onClick={() => dispatch(reserveDragon({ id }))}>Reserve Dragons</Button>
           ) : (
-            <Button variant="outline-secondary" onClick={() => dispatch(cancelReservation({ id }))}>Cancel Reservation</Button>
+            <Button variant="outline-secondary text-danger border-danger" onClick={() => dispatch(cancelReservation({ id }))}>Cancel Reservation</Button>
           )}
 
         </Card.Body>

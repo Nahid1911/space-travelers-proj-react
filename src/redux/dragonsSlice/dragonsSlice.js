@@ -16,6 +16,7 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
       description: dragon.description,
       flickrImage: dragon.flickr_images,
       reserved: false,
+      wikipLink: dragon.wikipedia,
     })))
 ));
 
