@@ -16,7 +16,7 @@ const MyProfile = () => {
   const joinedrockets = rockets.filter((rocket) => rocket.reserved === true);
   return (
     <div className="profile-container mx-5" style={{ display: 'flex' }}>
-      <div className="px-4" style={{ width: '34%' }}>
+      <div className="px-4" style={{ width: '32%' }}>
         <h2>My Missions</h2>
         { joinedmissions.length === 0
         && <p className={MyProfileStyle.title}>&emsp; No Mission Joined !!!</p>}
@@ -41,10 +41,10 @@ const MyProfile = () => {
 
         </Table>
       </div>
-      <div className="px-4" style={{ width: '33%' }}>
+      <div className="px-4" style={{ width: '34%' }}>
         <h2>My Rockets</h2>
         { joinedrockets.length === 0
-        && <p className={MyProfileStyle.title}>&emsp; No Rocket Joined !!!</p>}
+        && <p className={MyProfileStyle.title}>&emsp; No Rocket Reserved !!!</p>}
         <Table bordered>
           <tbody>
             {
@@ -54,7 +54,7 @@ const MyProfile = () => {
               {rocket.name}
             </td>
             <td className="text-center">
-              <Button variant="danger" align="right" onClick={() => dispatch(cancelRocketReservation({ id: rocket.id }))}>Leave rockets</Button>
+              <Button variant="danger" align="right" onClick={() => dispatch(cancelRocketReservation({ id: rocket.id }))}>Cancel Reservation</Button>
             </td>
             <td className="text-center">
               <Button variant="info" onClick={() => window.open(rocket.wikiLink)}>Read More</Button>
@@ -65,10 +65,10 @@ const MyProfile = () => {
           </tbody>
         </Table>
       </div>
-      <div className="px-4" style={{ width: '33%' }}>
+      <div className="px-4" style={{ width: '34%' }}>
         <h2>My Dragons</h2>
         { joinedDragons.length === 0
-        && <p className={MyProfileStyle.title}>&emsp; No Dragon Joined !!!</p>}
+        && <p className={MyProfileStyle.title}>&emsp; No Dragon Reserved !!!</p>}
         <Table bordered>
           <tbody>
             {
@@ -78,7 +78,7 @@ const MyProfile = () => {
               {dragon.name}
             </td>
             <td className="text-center">
-              <Button variant="danger" align="right" onClick={() => dispatch(cancelReservation({ id: dragon.id }))}>Leave dragons</Button>
+              <Button variant="danger" align="right" onClick={() => dispatch(cancelReservation({ id: dragon.id }))}>Cancel Reservation </Button>
             </td>
             <td className="text-center">
               <Button variant="info" onClick={() => window.open(dragon.wikipLink)}>Read More</Button>
