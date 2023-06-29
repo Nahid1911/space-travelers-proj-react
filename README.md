@@ -309,7 +309,7 @@ You can redeploy this project by adding new lines of code to source files.
 ### 👤 David Katende
 
 - GitHub: [Katended ](https://github.com/Katended)
-- Linkdin: [Katended ](https://www.linkedin.com/in/katende-david)
+- Linkdin: [Katended ](www.linkedin.com/in/katendedavid)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
