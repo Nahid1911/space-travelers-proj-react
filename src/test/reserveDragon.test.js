@@ -1,4 +1,4 @@
-import dragonsReducer, { reserveDragon} from '../redux/dragonsSlice/dragonsSlice';
+import dragonsReducer, { reserveDragon } from '../redux/dragonsSlice/dragonsSlice';
 
 describe('reserve dragon reducer', () => {
   it('should add the reserved property of the dragon with the given id', () => {

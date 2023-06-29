@@ -24,8 +24,8 @@ describe('Fetch dar async action', () => {
 
     // Define the expected actions that should be dispatched
     const expectedActions = [
-        fetchDragons.pending().type,
-        fetchDragons.fulfilled([
+      fetchDragons.pending().type,
+      fetchDragons.fulfilled([
         { id: '1', name: 'Mission 1', description: 'Description 1' },
         { id: '2', name: 'Mission 2', description: 'Description 2' },
       ]).type,
