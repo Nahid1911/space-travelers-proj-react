@@ -15,6 +15,7 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', () => axios
   type: rocket.type,
   flickrimages: rocket.flickr_images,
   reserved: false,
+  wikiLink: rocket.wikipedia,
 }))));
 
 export const reserveRocket = createAsyncThunk('rocket/reserveRocket', (id) => id);

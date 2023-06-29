@@ -1,6 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const initialState = {
+  isLoading: false,
+  dragonsArray: [],
+  error: '',
+};
+
 export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
   axios.get('https://api.spacexdata.com/v3/dragons')
     .then((response) => response.data.map((dragon) => ({
@@ -10,18 +16,13 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
       description: dragon.description,
       flickrImage: dragon.flickr_images,
       reserved: false,
+      wikipLink: dragon.wikipedia,
     })))
 ));
 
 export const reserveDragon = createAsyncThunk('dragons/reserveDragon', (id) => id);
 
 export const cancelReservation = createAsyncThunk('dragons/cancelReservation', (id) => id);
-
-const initialState = {
-  isLoading: false,
-  dragonsArray: [],
-  error: '',
-};
 
 const dragonSlice = createSlice({
   name: 'dragons',
@@ -45,7 +46,7 @@ const dragonSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(reserveDragon.fulfilled, (state, action) => {
-      const id = action.payload;
+      const { id } = action.payload;
       state.isLoading = false;
       state.dragonsArray = state.dragonsArray.map((dragon) => (dragon
         .id === id ? { ...dragon, reserved: true } : dragon));
@@ -59,7 +60,7 @@ const dragonSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(cancelReservation.fulfilled, (state, action) => {
-      const id = action.payload;
+      const { id } = action.payload;
       state.isLoading = false;
       state.dragonsArray = state.dragonsArray.map((dragon) => (dragon
         .id === id ? { ...dragon, reserved: false } : dragon));

@@ -6,10 +6,14 @@ import DragonItem from './DragonItem';
 
 const DragonsRender = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchDragons());
-  }, [dispatch]);
+
   const dragonArray = useSelector((state) => state.dragonsStore.dragonsArray);
+
+  useEffect(() => {
+    if (dragonArray.length === 0) {
+      dispatch(fetchDragons());
+    }
+  }, [dispatch, dragonArray]);
   return (
     <div className="mainBodyDiv">
       {dragonArray.map((dragon) => (
@@ -20,6 +24,7 @@ const DragonsRender = () => {
           type={dragon.type}
           description={dragon.description}
           flickrImages={dragon.flickrImage}
+          reserved={dragon.reserved}
         />
       ))}
     </div>
