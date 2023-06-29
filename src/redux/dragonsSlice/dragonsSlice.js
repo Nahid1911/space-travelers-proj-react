@@ -1,13 +1,20 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   isLoading: false,
   dragonsArray: [],
   error: '',
 };
-
-export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
+const MISSIONS_API_URL = 'https://api.spacexdata.com/v3/dragons';
+export const fetchDragons = createAsyncThunk(
+  'dragons/fetchDragons',
+  async (_, thunkAPI) => {
+    const response = await fetch(MISSIONS_API_URL)
+      .catch((error) => thunkAPI.rejectWithValue('An error occurred while fetching the data', error));
+    return response.json();
+  },
+);
+/* export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
   axios.get('https://api.spacexdata.com/v3/dragons')
     .then((response) => response.data.map((dragon) => ({
       id: dragon.id,
@@ -18,7 +25,7 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
       reserved: false,
       wikipLink: dragon.wikipedia,
     })))
-));
+)); */
 
 export const reserveDragon = createAsyncThunk('dragons/reserveDragon', (id) => id);
 
@@ -34,8 +41,19 @@ const dragonSlice = createSlice({
     });
     builder.addCase(fetchDragons.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.dragonsArray = action.payload;
+      const dragonsArray = action.payload;
       state.error = '';
+
+      const dragons = dragonsArray.map((dragon) => ({
+        id: dragon.id,
+        name: dragon.name,
+        type: dragon.type,
+        description: dragon.description,
+        flickrImage: dragon.flickr_images,
+        reserved: false,
+        wikipLink: dragon.wikipedia,
+      }));
+      state.dragonsArray = dragons;
     });
     builder.addCase(fetchDragons.rejected, (state, action) => {
       state.isLoading = false;
