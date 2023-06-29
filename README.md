@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-### <div align="center"><a href="#"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a> </div> 
+### <div align="center"><a href="#"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/540676b0-f537-4557-bb77-3b90b229bc0f"></a> </div> 
 # <div align="center">🛰Space 🚀 Travelers' ☄ Hub</div> 
 
 # 📗 Table of Contents
@@ -309,7 +309,7 @@ You can redeploy this project by adding new lines of code to source files.
 ### 👤 David Katende
 
 - GitHub: [Katended ](https://github.com/Katended)
-- Linkdin: [Katended ](#)
+- Linkdin: [Katended ](https://www.linkedin.com/in/katende-david)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
