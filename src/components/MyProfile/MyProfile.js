@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import MyProfileStyle from './MyProfile.module.css';
 import { leavingMission } from '../../redux/missionsSlice/missionsSlice';
+import Reservations from '../Rocket/Reservations';
 
 const MyProfile = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const MyProfile = () => {
         <h2>My Rockets</h2>
         <Table bordered>
           <tbody>
-            {/*     render here your list */}
+            <Reservations />
           </tbody>
 
         </Table>

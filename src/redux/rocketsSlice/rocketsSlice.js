@@ -21,6 +21,8 @@ export const reserveRocket = createAsyncThunk('rocket/reserveRocket', (id) => id
 
 export const cancelReservation = createAsyncThunk('rocket/cancelReservation', (id) => id);
 
+export const getReservation = createAsyncThunk('rocket/getReservation');
+
 const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
@@ -32,21 +34,34 @@ const rocketSlice = createSlice({
     builder.addCase(reserveRocket.fulfilled, (state, action) => {
       const { id } = action.payload;
       state.isLoading = false;
-      state.rockets = state.rockets.map((rocket) => (rocket.id === id
+
+      const newState = state.rockets.map((rocket) => (rocket.id === id
         ? { ...rocket, reserved: true } : rocket));
       state.error = '';
+      return { ...state, rockets: newState };
+    });
+
+    builder.addCase(getReservation.fulfilled, (state) => {
+      state.isLoading = false;
+      const newState = state.rockets.filter((rocket) => (rocket.reserved));
+      state.error = '';
+      return { rockets: newState };
+    });
+
+    builder.addCase(cancelReservation.fulfilled, (state, action) => {
+      const { id } = action.payload;
+      state.isLoading = false;
+
+      const newState = state.rockets.map((rocket) => (rocket
+        .id === id ? { ...rocket, reserved: false } : rocket));
+      state.error = '';
+      return { ...state, rockets: newState };
     });
 
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.isLoading = false;
       state.rockets = action.payload;
       state.error = '';
-    });
-
-    builder.addCase(fetchRockets.rejected, (state, action) => {
-      state.isLoading = false;
-      state.rockets = [];
-      state.error = action.error.message;
     });
   },
 });
