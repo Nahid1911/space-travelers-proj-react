@@ -25,7 +25,7 @@
 
 - [📝 License](#license)
 
-# 📖 React & Redux group project - Space Travelers' Hub Group Project <a name="about-project"></a>
+# 📖 React & Redux group project - Space Travelers' Hub  <a name="about-project"></a>
 
 In this Project, the actual live data from the SpaceX API. The task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions. project is a repository consisting of the following files:
 - JS files
