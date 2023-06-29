@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -10,44 +10,28 @@ import { useDispatch } from 'react-redux';
 import { reserveDragon, cancelReservation } from '../../redux/dragonsSlice/dragonsSlice';
 
 const DragonItem = ({
-  id, name, type, description, flickrImages,
+  id, name, description, flickrImages, reserved,
 }) => {
   const dispatch = useDispatch();
-  const [reserved, setReserved] = useState(false);
-  const [btnClass, setBtnClass] = useState('fbg-primary text-white');
-
-  const handleReserveDragon = () => {
-    if (reserved) {
-      dispatch(cancelReservation(id));
-      setReserved(false);
-      setBtnClass('fbg-primary text-white');
-    } else {
-      dispatch(reserveDragon(id));
-      setReserved(true);
-      setBtnClass('bg-light text-danger');
-    }
-  };
-
   return (
     <div className="dargContainer">
       <div className="dragonImgContainre">
         <Image className="dragonImg" src={flickrImages} />
       </div>
       <div className="dragonInfoContainer">
-        <Card.Body key={type}>
+        <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text className="descrStyle">
             {reserved && <span className="reserveSpan">| Reserved | </span>}
             {description}
           </Card.Text>
-          <Button
-            className={btnClass}
-            id={id}
-            variant="primary"
-            onClick={handleReserveDragon}
-          >
-            {reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
-          </Button>
+
+          { !reserved ? (
+            <Button variant="primary" onClick={() => dispatch(reserveDragon({ id }))}>Reserve Dragons</Button>
+          ) : (
+            <Button variant="outline-secondary" onClick={() => dispatch(cancelReservation({ id }))}>Cancel Reservation</Button>
+          )}
+
         </Card.Body>
       </div>
     </div>
@@ -57,9 +41,9 @@ const DragonItem = ({
 DragonItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   flickrImages: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default DragonItem;
