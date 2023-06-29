@@ -128,13 +128,13 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🌐 Live Demo <a name="#live-demo"></a>
-- [Space Travelers' Hub Web App](#) 
+- [Space Travelers' Hub Web App Live Demo](#) 
 - Learn More [How to deploy react app](https://github.com/gitname/react-gh-pages)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👁 Walkthrough <a name="#Walkthrough"></a>
 
-[Live vedio](https://drive.google.com/file/d/1JdyRRXO2_W1Fq5bu_4MYirS2-VoofdFz/view?usp=sharing) 
+[Space Travelers' Hub Web App Live Video](https://drive.google.com/file/d/1JdyRRXO2_W1Fq5bu_4MYirS2-VoofdFz/view?usp=sharing) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
