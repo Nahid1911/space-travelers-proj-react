@@ -7,19 +7,6 @@ const initialState = {
   error: '',
 };
 
-/* export const fetchRockets = createAsyncThunk(
-  'rockets/fetchRockets', () =>
-  fetch(URL.rocketsURL).then((response) =>
-  response.data.map((rocket) => ({
-  id: rocket.id,
-  name: rocket.name,
-  description: rocket.description,
-  type: rocket.type,
-  flickrimages: rocket.flickr_images,
-  reserved: false,
-  wikiLink: rocket.wikipedia,
-})))); */
-
 export const fetchRockets = createAsyncThunk(
   'rockets/fetchRockets',
   async (_, thunkAPI) => {

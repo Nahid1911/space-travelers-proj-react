@@ -14,18 +14,6 @@ export const fetchDragons = createAsyncThunk(
     return response.json();
   },
 );
-/* export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
-  axios.get('https://api.spacexdata.com/v3/dragons')
-    .then((response) => response.data.map((dragon) => ({
-      id: dragon.id,
-      name: dragon.name,
-      type: dragon.type,
-      description: dragon.description,
-      flickrImage: dragon.flickr_images,
-      reserved: false,
-      wikipLink: dragon.wikipedia,
-    })))
-)); */
 
 export const reserveDragon = createAsyncThunk('dragons/reserveDragon', (id) => id);
 
