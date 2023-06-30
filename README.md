@@ -1,5 +1,6 @@
 <a name="readme-top"></a>
-### <div align="center"><a href="#"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/e780a2cd-e49f-4780-a817-e854ccb46cdb"></a> </div> 
+### <div align="center"><a href="https://github.com/Benawi"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/e780a2cd-e49f-4780-a817-e854ccb46cdb"></a> ![image](https://github.com/Nahid1911/space-travelers-proj-react/assets/21217148/e35792d1-a11b-4c9a-90ef-3752cb9b7a07)
+ </div> 
 # <div align="center">🛰Space 🚀 Travelers' ☄ Hub</div> 
 
 # 📗 Table of Contents
@@ -54,21 +55,19 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
 
 ### Features Added - Space Travelers' Hub: 
 #### Config & basic setup
-   - [x] Set up a new React application using   Create React App
-   - [x] Set up the repository on GitHub and use Gitflow.
-   - [x] Set up testing libraries(React Testing Library and Jest).
+   - [x] Set up a new React application using Create React App
+   - [x] Testing libraries(React Testing Library and Jest) configured.
    - [x] React [Router V6](https://reactrouter.com/en/main/start/tutorial#setup) is installed
    - [x] **routes** and **view** components: `rockets`, `missions`, `my profile`. Add `dragons` are created
-  - [x] Add Redux Toolkit (npm install react-redux @reduxjs/toolkit).
+   - [x] Add Redux Toolkit (npm install react-redux @reduxjs/toolkit).
    - [x] Create a directory that will contain all your Redux logic (/src/redux)
    - [x] Configure a Redux store (/src/redux/store.js)
    - [x] Define a slice of state for all reducers
    - [x] `<NavLink />` for the page navigation links and active style class to indicate which section/page the user is currently on (underline active navigation link) is used.
-  - [x] Directories for all Redux state slice files:`rockets`, `missions`, and `dragons` is created 
-  - [x] Structure application files using a "feature folder" approach and the [ducks pattern](https://github.com/erikras/ducks-modular-redux) used for Redux files.
- - [x] Wrap `<App>` with the `<Provider>` component from react-redux
-  - [x] Configured store passed into the `<Provider>`
-  - [x] Create an initialState variable for  slices
+   - [x] Directories for all Redux state slice files:`rockets`, `missions`, and `dragons` is created 
+   - [x] Structure application files using a "feature folder" approach and the [ducks pattern](https://github.com/erikras/ducks-modular-redux) used for Redux files.
+   - [x] Wrap `<App>` with the `<Provider>` component from react-redux
+   - [x] Configured store passed into the `<Provider>`
 #### Redux: Fetch data and update the Redux store   
   - [x] Upon first render data will be fetched  from the SpaceX API endpoints:
     - [x] Rockets: `https://api.spacexdata.com/v4/rockets`
@@ -124,6 +123,8 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
 - [x] The My Profile section was enhanced by adding the "Read more" button for each mission and rocket/dragons. Upon clicking, it will open a corresponding Wikipedia page in a new tab. 
 - [x] We get an extra Wikipedia URL from the API's payload.
 - [x] In the browser tested ; it render without problems, [Space Travelers' Hub ](#)
+#### Unit Testing
+- [x] All components and functions of the project tested and [pass all](https://github.com/Nahid1911/space-travelers-proj-react/assets/21217148/cf7d6060-a326-418c-81c7-b2eaf25a7c54)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
