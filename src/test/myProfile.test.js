@@ -62,7 +62,6 @@ describe('Fetch Missions async action', () => {
     expect(dispatchedActions.map((action) => action.type)).toEqual(expectedActions);
   });
 
-
   it('dispatches the correct actions when API call is successful', async () => {
     // Mock the fetch function to return a successful response
     global.fetch = jest.fn().mockResolvedValue({
@@ -109,8 +108,8 @@ describe('Fetch Missions async action', () => {
 
     // Verify that the dispatched actions match the expected actions
     expect(dispatchedActions.map((action) => action.type)).toEqual(expectedActions);
-});
-it('dispatches the correct actions when API call is successful', async () => {
+  });
+  it('dispatches the correct actions when API call is successful', async () => {
     // Mock the fetch function to return a successful response
     global.fetch = jest.fn().mockResolvedValue({
       json: () => Promise.resolve([
@@ -144,5 +143,5 @@ it('dispatches the correct actions when API call is successful', async () => {
 
     // Verify that the dispatched actions match the expected actions
     expect(dispatchedActions.map((action) => action.type)).toEqual(expectedActions);
-  });});
-
+  });
+});
