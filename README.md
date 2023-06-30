@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-### <div align="center"><a href="https://github.com/Benawi"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/e780a2cd-e49f-4780-a817-e854ccb46cdb"></a> ![image](https://github.com/Nahid1911/space-travelers-proj-react/assets/21217148/e35792d1-a11b-4c9a-90ef-3752cb9b7a07)
+### <div align="center"><a href="https://github.com/Benawi"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/e780a2cd-e49f-4780-a817-e854ccb46cdb"></a> ![image](https://github.com/Nahid1911/Nahid1911/assets/118947090/e843eafc-ed80-44da-9beb-877615918dd7)
 
  </div> 
 # <div align="center">🛰Space 🚀 Travelers' ☄ Hub</div>
@@ -150,7 +150,7 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
 
 ## 👁 Walkthrough <a name="#Walkthrough"></a>
 
-[Space Travelers' Hub Web App Live Video](https://drive.google.com/file/d/1JdyRRXO2_W1Fq5bu_4MYirS2-VoofdFz/view?usp=sharing)
+[Space Travelers' Hub Web App Walkthrough](https://youtu.be/wRnMzZHLSas)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
