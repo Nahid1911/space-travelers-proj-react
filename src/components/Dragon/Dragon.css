@@ -1,0 +1,53 @@
+.mainBodyDiv {
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 10px;
+}
+
+.dargContainer {
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.dragonImgContainre {
+  width: 20%;
+  height: 100%;
+}
+
+.dragonImg {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.dragonInfoContainer {
+  width: 80%;
+  height: 100%;
+  padding-left: 2%;
+}
+
+.descrStyle {
+  text-align: justify;
+}
+
+.reserveSpan {
+  /* background-color: aqua; */
+  color: blue;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.card {
+  border: none;
+  width: 100%;
+}

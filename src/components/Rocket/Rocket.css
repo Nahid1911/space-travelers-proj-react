@@ -1,0 +1,43 @@
+.mainBodyDiv {
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 10px;
+  overflow-x: hidden;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.row {
+  margin-top: 2%;
+  padding: 0;
+  margin-left: 1%;
+}
+
+.card-title h5 {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+col {
+  padding: 0;
+  margin: 0;
+}
+
+.badge {
+  padding: 6px;
+}
