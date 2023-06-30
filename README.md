@@ -1,11 +1,6 @@
 <a name="readme-top"></a>
 
-### <div align="center"><a href="https://github.com/Benawi"><img src="https://github.com/Benawi/Benawi/assets/21217148/de823737-5f7f-4de8-b62e-3fe88c238eab"/></a><a><img src="https://github.com/Katended/Katended/assets/43292406/e780a2cd-e49f-4780-a817-e854ccb46cdb"></a><a><img src="https://github.com/Nahid1911/space-travelers-proj-react/assets/21217148/ce4f295f-8b18-408a-9efc-e681802c0b0e"></a>
-
-</a>
-
- </div> 
-<div align="center">🛰Space Travelers' Hub 🚀</div>
+# <div align="center">🛰Space Travelers' Hub 🚀</div>
 
 # 📗 Table of Contents
 
@@ -40,9 +35,8 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
 
 ## 🛠 Built With <a name="built-with"></a>
 
-## Tech Stack <a name="tech-stack"></a>
+### Tech Stack <a name="tech-stack"></a>
 
-<ul>
   <ul>
   <li><a href="https://microverse.notion.site/HTML-CSS-Get-a-head-start-275eb85fd34b4416aa06ec635d69cdaf">HTML</a></li>
   <li><a href="https://microverse.notion.site/HTML-CSS-Get-a-head-start-275eb85fd34b4416aa06ec635d69cdaf">CSS</a></li>
@@ -53,96 +47,11 @@ In this Project, the actual live data from the SpaceX API. The task is to build 
          <li><a href="https://github.com/microverseinc/curriculum-react-redux/blob/main/math-magicians/articles/react_router.md">React Router</a></li>
 </ul>
 
-## 🔑 Key Features <a name="key-features"></a>
+###  Key Features <a name="key-features"></a>
 
-### Space Travelers' Hub React Project: [Requirements](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/project_space_travelers_hub.md)
-
-### Features Added - Space Travelers' Hub:
-
-#### Config & basic setup
-
-- [x] Set up a new React application using Create React App
-- [x] Testing libraries(React Testing Library and Jest) configured.
-- [x] React [Router V6](https://reactrouter.com/en/main/start/tutorial#setup) is installed
-- [x] **routes** and **view** components: `rockets`, `missions`, `my profile`. Add `dragons` are created
-- [x] Add Redux Toolkit (npm install react-redux @reduxjs/toolkit).
-- [x] Create a directory that will contain all your Redux logic (/src/redux)
-- [x] Configure a Redux store (/src/redux/store.js)
-- [x] Define a slice of state for all reducers
-- [x] `<NavLink />` for the page navigation links and active style class to indicate which section/page the user is currently on (underline active navigation link) is used.
-- [x] Directories for all Redux state slice files:`rockets`, `missions`, and `dragons` is created
-- [x] Structure application files using a "feature folder" approach and the [ducks pattern](https://github.com/erikras/ducks-modular-redux) used for Redux files.
-- [x] Wrap `<App>` with the `<Provider>` component from react-redux
-- [x] Configured store passed into the `<Provider>`
-
-#### Redux: Fetch data and update the Redux store
-
-- [x] Upon first render data will be fetched from the SpaceX API endpoints:
-  - [x] Rockets: `https://api.spacexdata.com/v4/rockets`
-  - [x] Missions: `https://api.spacexdata.com/v3/missions`
-  - Dragons: `https://api.spacexdata.com/v4/dragons`
-- [x] Once the data are fetched, dispatch an action to store the selected data in the Redux store:
-  - [x] Rockets:
-    - id, rocket_name ,description, flickr_images
-  - [x] Missions:
-    - mission_id, mission_name, description
-  - [x] Dragons :
-    - id, name, type, flickr_images
-  - [x] Those actions dispatch only once and do not add data to store on every re-render (i.e. when changing views / using navigation).
-  - [x] _Rockets_ is the default view, so _rockets_ data will be fetched when the application starts.
-  - [x] The _missions_ data and _dragon_ data fetched (once) when a user navigates to the _Missions_ and _dragon_ section.
-
-#### Render UI: lists
-
-- [x] `useSelector()` Redux Hook is used to select the state slices and render lists of rockets, dragons, and missions in corresponding routes.
-- [x] The whole application styled "by hand" and [React Bootstrap](https://react-bootstrap.github.io/), a UI library that could speed up the process. This is a popular library and working with its components would be good practice.
-- [x] Render a list of rockets (as per design). For the image of a rocket the first image in the array of `flickr_images` is used.
-- [x] Render a table with the missions' data ([as per design](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__missions.png)).
-- [x] Render a list of dragons ([as per design](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__rockets.png)). For the image of a dragon the first image in the array of `flickr_images`is used.
-
-#### Redux: Write actions and reducers for booking rockets/dragons and joining missions
-
-- [x] When a user clicks the "Reserve rocket" button or "Reserve dragon" button action will be dispatched to update the store. get the ID of the reserved rocket and update the state. does not mutate the state. Instead, it returns a new state object with all rockets, but the selected rocket will have an extra key `reserved` with its value set to `true`. we use a JS `filter()` or `map()` to set the value of the new state.
-
-- [x] All logic is placed in the reducer. In the React view file, we only dispatch the action with the correct rocket ID as an argument.
-- [x] A reducer and action dispatcher for the "Join Mission" button is created. The logic is practically the same as with rockets - we pass the mission's ID to the corresponding action and update the mission's state with the selected mission having a new key/value - `reserved: true`.
-
-#### Redux: Write actions and reducers for canceling rockets/dragons and leaving missions
-
-- [x] Here we follow the same logic as with the "Reserve rocket"/"Reserve dragon" and "Join mission" - but we need to set the `reserved` key to `false`.
-- [x] These actions are dispatched upon clicking on the corresponding buttons.
-
-#### Render UI: conditional components rendering
-
-- [x] Rockets that have already been reserved will show a "Reserved" badge and "Cancel reservation" button instead of the default "Reserve rocket" ([as per design](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__rockets.png)) .
-- [x] Dragons that have already been reserved will show a "Reserved" badge and "Cancel reservation" button instead of the default "Reserve dragon"
-- [x] Missions that the user has joined already will show a badge "Active Member" instead of the default "NOT A MEMBER" and a button "Leave Mission" instead of the "Join Mission" button ([as per design](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__missions.png)).
-- [x] Rockets/Dragons and Missions used the React conditional rendering syntax.
-
-#### Render UI: My Profile section
-
-- [x] Compose three column layout and list ONLY the rockets, dragons reserved, and missions joined by the user ([as per design](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/images/space-travelers__my-profile.png)):
-  - Render a list of all joined missions (`filter()` and `map()` used).
-  - Render a list of all reserved rockets (`filter()` and `map()` used).
-  - Render a list of all reserved dragons (`filter()` and `map()` used).
-
-#### Test case add for all components and functions.
-
-- [x] Fetch data and update Redux store tested
-- [x] Mission, Dragon, Rockets, and My Profile section tested
-
-#### Additional Features Added
-
-- [x] The My Profile section is enhanced by adding a placeholder message when the "My Missions" or "My Rockets" lists are empty (no missions joined or no rockets/dragons reserved).
-- [x] The My Profile section was enhanced by adding the "Cancel reservation" and "Leave Mission" buttons to the lists here. Clicking them will dispatch the actions you have already used in the main Rockets/Dragons and Missions sections.
-- [x] The My Profile section was enhanced by adding the "Read more" button for each mission and rocket/dragons. Upon clicking, it will open a corresponding Wikipedia page in a new tab.
-- [x] We get an extra Wikipedia URL from the API's payload.
-- [x] In the browser tested ; it render without problems, [Space Travelers' Hub ](#)
-
-#### Unit Testing
-
-- [x] All components and functions of the project tested and [pass all](https://github.com/Nahid1911/space-travelers-proj-react/assets/21217148/cf7d6060-a326-418c-81c7-b2eaf25a7c54)
-
+-  Integration with external APIs: The React  Project integrates with external APIs to provide users with real-time data, such as space mission rockets, and dragon
+-  Personalization options: Users can customize their profiles and preferences within the Space Travelers' Hub, enabling them to tailor their experience according to their individual needs and interests
+-  Mission, rocket, and dragon Details: Users can access detailed information about Mission, rocket, and dragon by triggering an event on see more buttons
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🌐 Live Demo <a name="#live-demo"></a>
