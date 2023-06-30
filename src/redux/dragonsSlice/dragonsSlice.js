@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   isLoading: false,
@@ -7,9 +6,14 @@ const initialState = {
   error: '',
 };
 
-export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
-  axios.get('https://api.spacexdata.com/v3/dragons')
-    .then((response) => response.data.map((dragon) => ({
+export const fetchDragons = createAsyncThunk('dragons/fetchDragons', async () => {
+  try {
+    const response = await fetch('https://api.spacexdata.com/v3/dragons');
+    if (!response.ok) {
+      throw new Error('Failed to fetch dragons.');
+    }
+    const data = await response.json();
+    const dragons = data.map((dragon) => ({
       id: dragon.id,
       name: dragon.name,
       type: dragon.type,
@@ -17,8 +21,12 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', () => (
       flickrImage: dragon.flickr_images,
       reserved: false,
       wikipLink: dragon.wikipedia,
-    })))
-));
+    }));
+    return dragons;
+  } catch (error) {
+    throw new Error('Failed to fetch dragons.');
+  }
+});
 
 export const reserveDragon = createAsyncThunk('dragons/reserveDragon', (id) => id);
 
