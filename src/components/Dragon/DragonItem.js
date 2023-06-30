@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-// import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import './Dragon.css';
 import { useDispatch } from 'react-redux';

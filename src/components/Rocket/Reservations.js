@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
-// import { getReservation } from '../../redux/rocketsSlice/rocketsSlice';
 import ReservationItem from './ReservationItem';
 
 const Reservations = () => {

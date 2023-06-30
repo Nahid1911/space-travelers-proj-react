@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-/* import Container from 'react-bootstrap/Container'; */
 import Badge from 'react-bootstrap/Badge';
 import { Col } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
