@@ -5,7 +5,7 @@
 </a>
 
  </div> 
-<div align="center">🛰Space 🚀 Travelers' ☄ Hub</div>
+<div align="center">🛰Space Travelers' Hub 🚀</div>
 
 # 📗 Table of Contents
 
